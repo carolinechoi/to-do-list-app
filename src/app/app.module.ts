@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(FIREBASE_CREDENTIALS)
   ],
   bootstrap: [IonicApp],
