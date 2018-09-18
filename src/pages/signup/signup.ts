@@ -31,7 +31,7 @@ export class SignupPage implements OnInit{
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
   }
-
+  
   ngOnInit() {
     this.newUserRef$ = this.db.list('users');
   }
