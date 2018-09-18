@@ -1,7 +1,11 @@
 page-landing {
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            background: #facdac;
+        }
+    }
     #shape {
         position: center;
-        margin-top: 45%;
     }
     .buttons {
         position: absolute;
