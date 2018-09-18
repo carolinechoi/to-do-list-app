@@ -1,3 +1,23 @@
 page-landing {
-
+    #shape {
+        position: center;
+        margin-top: 45%;
+    }
+    .buttons {
+        position: absolute;
+        bottom: 52px;
+        display: block;
+        float: center;
+        text-align: center;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .login {
+        width: 130px;
+        height: 42px;
+    }
+    .signup {
+        width: 130px;
+        height: 42px;
+    }
 }

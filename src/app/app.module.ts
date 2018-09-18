@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from '@angular/fire';
 import { FIREBASE_CREDENTIALS } from './firebase.credentials';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 //Page imports
 import { MyApp } from './app.component';
@@ -32,6 +33,7 @@ import { SignupPage } from '../pages/signup/signup';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(FIREBASE_CREDENTIALS)
   ],
   bootstrap: [IonicApp],
