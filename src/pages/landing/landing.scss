@@ -1,27 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:bold');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+// Colors
+$primary: #445EE9;
+$pink: #FED5C8;
+$light-grey: #3c4857;
+
 page-landing {
-    .swiper-pagination {
-        .swiper-pagination-bullet {
-            background: #facdac;
-        }
+    .title {
+        font-family: 'Poppins';
+        font-style: bold;
+        font-size: 20px;
+        letter-spacing: 1px;
     }
-    #shape {
-        position: center;
+    .subtitle {
+        font-family: 'Open Sans';
+        font-size: 13px;
+        font-style: bold;
+        color: $light-grey;
+    }
+    button {
+        font-family: 'Poppins';
+        letter-spacing: -1px;
     }
     .buttons {
-        position: absolute;
-        bottom: 52px;
-        display: block;
-        float: center;
-        text-align: center;
-        padding-right: 15px;
-        padding-left: 15px;
+        display: table;
+        margin: 0 auto;
+        margin-top: 100px;
     }
     .login {
-        width: 130px;
-        height: 42px;
+        width: 300px;
+        height: 46px;
+        display: block;
+        border-radius: 4px;
     }
     .signup {
-        width: 130px;
-        height: 42px;
+        width: 300px;
+        height: 46px;
+        display: block;
+        border-radius: 4px;
     }
+
+    //For iPhoneSE + smaller
+        @media screen and (max-width: 640px) {
+            #shape {
+                margin-bottom: -20px;
+                z-index: -1;
+                position: relative;
+                width: 440px;
+                height: 300px;
+                margin-left: -60px;
+                margin-top: 20px;
+            }
+            #plant {
+                width: 100px;
+                margin-right: 90px;
+                margin-left: 10px;
+            }
+            #coffee {
+                width: 60px;
+            }
+            .subtitle {
+                margin-bottom: 0px;
+                margin-left: 20px;
+                padding-top: 10px;
+            }
+            .title {
+                margin-left: 20px;
+                margin-bottom: -13px;
+                color: $primary;
+                margin-top: -5px;
+            }
+            .buttons {
+                margin-top: 70px;
+            }
+            .login {
+                margin-top: 13px;
+            }
+        }
 }
