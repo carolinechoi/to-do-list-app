@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:bold');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
 
-// Colors
-$primary: #445EE9;
+// Colors blue=#445ee9
+$primary: #0000;
 $pink: #FED5C8;
 $light-grey: #3c4857;
 
 page-landing {
-    #logo {
+    img {
         display: table;
         margin: 0 auto;
     }
-    .title {
+    .obsidian, .white {
         font-family: 'Open Sans';
         font-weight: bold;
         font-size: 50px;
@@ -33,29 +32,28 @@ page-landing {
     .buttons {
         display: table;
         margin: 0 auto;
-        margin-top: 100px;
     }
     .login {
         width: 300px;
-        height: 46px;
+        height: 47px;
         display: block;
         border-radius: 4px;
     }
     .signup {
         width: 300px;
-        height: 46px;
+        height: 47px;
         display: block;
         border-radius: 4px;
     }
 
     //For iPhoneSE + smaller
         @media screen and (max-width: 640px) {
-            #logo {
+            img {
                 width: 100px;
                 margin-top: 87px;
                 margin-bottom: 40px;
             }
-            .title {
+            .obsidian, .white {
                 color: $primary;
                 padding-top: 1px;
             }
@@ -63,7 +61,7 @@ page-landing {
                 margin-top: -48px;
             }
             .buttons {
-                margin-top: 70px;
+                margin-top: 80px;
             }
             .login {
                 margin-top: 20px;
