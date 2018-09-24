@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
 
 // Colors
-$primary: #445EE9;
+$primary: #000;
 $pink: #FED5C8;
 $light-grey: #3c4857;
 
 page-signup {
-    #shape {
+    img {
         display: table;
         margin: 0 auto;
     }
@@ -17,17 +17,36 @@ page-signup {
         font-weight: bold;
         font-size: 30px;
     }
-    button {
-        display: block;
+    .button {
+        display: table;
+        margin: 0 auto;
         border-radius: 4px;
-        font-family: 'Open Sans';
+        button {
+            font-family: 'Open Sans';
+            font-weight: bold;
+            width: 300px;
+            height: 47px;
+            display: block;
+        }
+    }
+    .list {
+        padding-top: 20px;
+        ion-item {
+            padding-top: 15px;
+            ion-label {
+                padding-top: 5px;
+            }
+        }
     }
     //For iPhoneSE + smaller
     @media screen and (max-width: 640px) {
-        #shape {
+        img {
             width: 60px;
-            margin-top: 27px;
+            margin-top: 67px;
             margin-bottom: 10px;
+        }
+        .button {
+            margin-top: 47px;
         }
     }
 }

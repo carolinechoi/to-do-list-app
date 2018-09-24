@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
 
 // Colors blue=#445ee9
-$primary: #0000;
+$primary: #000;
 $pink: #FED5C8;
 $light-grey: #3c4857;
 
@@ -17,13 +17,15 @@ page-landing {
         letter-spacing: 1px;
         text-align: center;
     }
-    .subtitle {
-        font-family: 'Open Sans';
-        font-weight: thin;
-        font-size: 17px;
-        font-style: bold;
-        color: $light-grey;
-        text-align: center;
+    #obsidian {
+        color: $primary;
+    }
+    #white {
+        color: white;
+        -webkit-text-stroke: 2px $primary;
+    }
+    .white {
+        margin-top: -50px;
     }
     button {
         font-family: 'Open Sans';
@@ -53,15 +55,8 @@ page-landing {
                 margin-top: 87px;
                 margin-bottom: 40px;
             }
-            .obsidian, .white {
-                color: $primary;
-                padding-top: 1px;
-            }
-            .subtitle {
-                margin-top: -48px;
-            }
             .buttons {
-                margin-top: 80px;
+                margin-top: 87px;
             }
             .login {
                 margin-top: 20px;

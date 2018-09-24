@@ -19,7 +19,7 @@ import { HomePage } from '../home/home';
 export class SignupPage implements OnInit{
   
   newUser = {} as User;
-  newUserRef$: AngularFireList<User>;
+  newUserRef$: AngularFireList<User[]>;
 
   constructor(private toast: ToastController, 
     private db: AngularFireDatabase, 
@@ -45,6 +45,7 @@ export class SignupPage implements OnInit{
     }
     }
     catch(e) {
+      console.log(e);
       this.toast.create({
         message: e,
         duration: 2000
