@@ -41,13 +41,12 @@ export class SignupPage implements OnInit{
     const result = await this.afauth.auth.createUserWithEmailAndPassword(newUser.email, newUser.password);
     console.log(result);
     if (result) {
-      this.navCtrl.push(HomePage);
+      this.navCtrl.setRoot(HomePage);
     }
     }
     catch(e) {
-      console.log(e);
       this.toast.create({
-        message: e,
+        message:   `Let's try again: ` + `${e}`.substr(7),
         duration: 2000
       }).present();
     }
