@@ -1,19 +1,29 @@
-<ion-content no-bounce padding>
+<ion-header no-border>
+    <button clear id="close" ion-button navPop><ion-icon name="close"></ion-icon></button>
+</ion-header>
+<ion-content padding>
+
     <img src="data:image/png;base64,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">
 
-    <div class="title"><p>SIGN UP</p></div>
+    <div class="title"><p>Add New List</p></div>
     
     <div class="list">
       <ion-item>
-        <ion-label color="secondary" stacked>Email Address</ion-label>
-        <ion-input type="email" [(ngModel)]="newUser.email"></ion-input>
+        <ion-label color="secondary" stacked>List Name</ion-label>
+        <ion-input type="text" [(ngModel)]="list.name"></ion-input>
       </ion-item>
     
       <ion-item>
-        <ion-label color="secondary" stacked>Password</ion-label>
-        <ion-input clear-input type="password" [(ngModel)]="newUser.password"></ion-input>
+        <ion-label color="secondary" stacked>Color</ion-label>
+        <ion-select interface="popover" [(ngModel)]="list.color">
+            <ion-option value="#89adbb">Pewter Blue</ion-option>
+            <ion-option value="#496cbf">Queen Blue</ion-option>
+            <ion-option value="#a7545b">Middle Red</ion-option>
+            <ion-option value="#e6927e">Dark Salmon</ion-option>
+        </ion-select>
       </ion-item>
     </div>
     
-      <div class="button"><button ion-button (click)="addUser(newUser)">CREATE ACCOUNT</button></div>
+    <div class="button"><button ion-button (click)="createNewList1(list)">ADD TASK</button></div>
 </ion-content>
+

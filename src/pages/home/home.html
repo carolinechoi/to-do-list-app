@@ -1,11 +1,28 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
 
+  <div class="navbar">
+    <button clear ion-button menuToggle id="menu">
+    <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <button clear ion-button id="search">
+        <ion-icon name="search"></ion-icon>
+    </button>
+    
+    <p id="title">Lists</p>
+
+  </div>
+
+  <ion-item>
+      <ion-card *ngFor = "let list of listRef$ | async">
+      <p>{{listRef$?.name}}</p>
+      <p>{{listRef$?.color}}</p>
+      </ion-card>            
+  </ion-item>
+  
+  <div class="add-bttn">
+    <ion-fab bottom center>
+      <button ion-fab [navPush]="goNew"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+  </div>
 </ion-content>

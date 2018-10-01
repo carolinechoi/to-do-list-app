@@ -1,3 +1,35 @@
-page-home {
+@import url('https://fonts.googleapis.com/css?family=Poppins:bold');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
 
+// Colors
+$primary: #000;
+$pink: #FED5C8;
+$light-grey: #3c4857;
+
+page-home {
+    .navbar {
+        margin-top: -10px;
+        #title {
+            text-align: center;
+            font-family: 'Open Sans';
+            font-weight: bold;
+            font-size: 30px;
+        }
+        #menu {
+            float: left;
+            background-color: white;
+            color: $primary;
+            font-size: 30px;
+        }
+        #search {
+            background-color: white;
+            color: $primary;
+            font-size: 25px;
+            float: right;
+        }
+    }
+    
+    //For iPhoneSE + smaller
+    @media screen and (max-width: 640px) {
+    }
 }

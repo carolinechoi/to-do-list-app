@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ToastController, NavParams } from 'ionic-angular';
 
 //Firebase imports
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 //Model import
@@ -22,7 +21,6 @@ export class LoginPage {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private db: AngularFireDatabase,
     public navCtrl: NavController, 
     public navParams: NavParams,
     public toast: ToastController) {
@@ -38,13 +36,16 @@ export class LoginPage {
       if (result) {
         this.navCtrl.setRoot(HomePage);
         console.log('pushed to HomePage');
+        this.toast.create({
+          message: `We're all given the same hours in a day. Are you ready to maximise yours?`,
+          duration: 3000
+        }).present();
       } 
-      else {}
     }
     catch(e) {
       this.toast.create({
-        message: "Incorrect password or email! Possibly: "+e,
-        duration: 4000
+        message:   `Let's try again: ` + `${e}`.substr(7),
+        duration: 2000
       }).present();
     }
   }

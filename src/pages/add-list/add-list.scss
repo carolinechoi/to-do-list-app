@@ -6,12 +6,18 @@ $primary: #000;
 $pink: #FED5C8;
 $light-grey: #3c4857;
 
-page-login {
+page-add-list {
+    #close {
+        background-color: white;
+        color: $primary;
+        font-size: 25px;
+        float: left;
+    }
     img {
         display: table;
         margin: 0 auto;
     }
-    .title {
+    #title {
         text-align: center;
         font-family: 'Open Sans';
         font-weight: bold;
@@ -42,7 +48,6 @@ page-login {
     @media screen and (max-width: 640px) {
         img {
             width: 60px;
-            margin-top: 67px;
             margin-bottom: 10px;
         }
         .button {

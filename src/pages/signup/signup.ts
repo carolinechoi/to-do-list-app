@@ -38,11 +38,11 @@ export class SignupPage implements OnInit{
 
   async addUser(newUser: User) {
     try {
-    const result = await this.afauth.auth.createUserWithEmailAndPassword(newUser.email, newUser.password);
-    console.log(result);
-    if (result) {
-      this.navCtrl.setRoot(HomePage);
-    }
+      const result = await this.afauth.auth.createUserWithEmailAndPassword(newUser.email, newUser.password);
+      console.log(result);
+      if (result) {
+        this.navCtrl.setRoot(HomePage);
+      }
     }
     catch(e) {
       this.toast.create({
