@@ -21,6 +21,7 @@ import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { AddBulletPage } from '../pages/add-bullet/add-bullet';
 import { AddListPage } from '../pages/add-list/add-list';
+import { PopoverPage } from '../pages/popover/popover';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddListPage } from '../pages/add-list/add-list';
     LoginPage,
     SignupPage,
     AddBulletPage,
-    AddListPage
+    AddListPage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { AddListPage } from '../pages/add-list/add-list';
     LoginPage,
     SignupPage,
     AddBulletPage,
-    AddListPage
+    AddListPage,
+    PopoverPage
   ],
   providers: [
     StatusBar,

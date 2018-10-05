@@ -1,31 +1,78 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:bold');
+@import url('https://fonts.googleapis.com/css?family=Josefin Sans:regular');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
 
 // Colors
-$primary: #000;
+$primary: #3c4857;
 $pink: #FED5C8;
-$light-grey: #3c4857;
+$grey: #5a6169;
+$light-grey: #cfd2d6;
+
+//fonts
+$font: 'Open Sans';
 
 page-home {
     .navbar {
-        margin-top: -10px;
+        margin-top: 0px;
         #title {
-            text-align: center;
-            font-family: 'Open Sans';
-            font-weight: bold;
-            font-size: 30px;
-        }
-        #menu {
-            float: left;
-            background-color: white;
+            margin-left: 9px;
+            letter-spacing: 1px;
+            font-family: $font;
+            font-size: 25px;
             color: $primary;
-            font-size: 30px;
+        }
+        #sub {
+            margin-left: 10px;
+            font-family: $font;
+            font-size: 15px;
+            color: $grey;
+            margin-top: -20px;
+            letter-spacing: 1px;
+        }
+        #search, #menu {
+            margin-top: -5px;
         }
         #search {
             background-color: white;
-            color: $primary;
-            font-size: 25px;
+            color: $grey;
+            font-size: 15px;
             float: right;
+            margin-left: -13px;
+            margin-right: -10px;
+        }
+        #menu {
+            float: right;
+            background-color: white;
+            color: $grey;
+            font-size: 15px;
+            padding-left: -10px;
+        }
+    }
+    ion-grid {
+        ion-card {
+            height: 150px;
+            img {
+                width: 10%;
+                height: auto;
+                float: left;
+                margin-top: 20px;
+                margin-left: 13px;
+                position: absolute;
+            }
+            #listName, #listColor{
+                font-family: $font;
+                margin-left: 13px;
+            }
+            #listName{
+                margin-top: 90px;
+                font-style: bold;
+            }
+        }
+        #add-bttn{
+            margin-left: 15px;
+            border-radius: 4px;
+            height: 118px;
+            padding-top: 4px;
         }
     }
     

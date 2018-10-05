@@ -7,6 +7,12 @@ $pink: #FED5C8;
 $light-grey: #3c4857;
 
 page-login {
+    #close {
+        background-color: white;
+        color: $primary;
+        font-size: 25px;
+        float: left;
+    }
     img {
         display: table;
         margin: 0 auto;
@@ -16,6 +22,7 @@ page-login {
         font-family: 'Open Sans';
         font-weight: bold;
         font-size: 30px;
+        letter-spacing: 1px;
     }
     .button {
         display: table;
@@ -23,8 +30,8 @@ page-login {
         border-radius: 4px;
         button {
             font-family: 'Open Sans';
-            font-weight: bold;
             width: 300px;
+            letter-spacing: 2px;
             height: 47px;
             display: block;
         }
@@ -38,15 +45,20 @@ page-login {
             }
         }
     }
+    #other {
+        font-family: 'Open Sans';
+        font-size: 12px;
+        text-align: center;
+        color: $primary;
+    }
     //For iPhoneSE + smaller
     @media screen and (max-width: 640px) {
         img {
             width: 60px;
-            margin-top: 67px;
             margin-bottom: 10px;
         }
         .button {
-            margin-top: 47px;
+            margin-top: 46px;
         }
     }
 }

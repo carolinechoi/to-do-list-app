@@ -10,6 +10,9 @@ import { list } from '../../models/list.interface';
 
 //Pages import
 import { HomePage } from '../home/home';
+import { Observable } from 'rxjs';
+
+import { take } from 'rxjs-compat/operator/take';
 
 @IonicPage()
 @Component({
@@ -28,9 +31,10 @@ export class AddListPage implements OnInit{
   }
 
   ngOnInit(){
-    this.afAuth.authState.take(1).subscribe(auth => {
-      this.newListRef$ = this.db.list('list/'+auth.uid+'/');
-    })
+    //method .take() does not work on authState, also unnecessary 
+    this.afAuth.authState.subscribe(auth => {
+      this.newListRef$ = this.db.list(auth.uid+'/lists');
+    });
   }
 
   ionViewDidLoad() {
