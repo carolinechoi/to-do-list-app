@@ -23,7 +23,7 @@ export class LoginPage {
     private afAuth: AngularFireAuth,
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public toast: ToastController) {
+    private toast: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -35,7 +35,6 @@ export class LoginPage {
       const result = this.afAuth.auth.signInWithEmailAndPassword(oldUser.email, oldUser.password);
       if (result) {
         this.navCtrl.setRoot(HomePage);
-        console.log('pushed to HomePage');
         this.toast.create({
           message: `We're all given the same hours in a day. Are you ready to maximise yours?`,
           duration: 3000

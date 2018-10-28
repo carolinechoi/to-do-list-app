@@ -1,37 +1,43 @@
-<ion-content padding>
+<ion-content padding class="master">
 
   <div class="navbar">
     <button icon-only clear ion-button id="search">
-      <ion-icon name="search"></ion-icon>
-    </button>
-    
-    <button icon-only clear ion-button (click)="presentPopover($event)" id="menu">
-      <ion-icon name="more"></ion-icon>
+      <ion-icon name="settings"></ion-icon>
     </button>
     
     <p id="title">Welcome,</p>
-    <p id="sub">let's be productive today</p>
+    <p id="sub">this is your to-do list</p>
 
   </div>
 
-  <ion-grid *ngIf="listRef">
+  <ion-list>
+  <ion-grid no-padding>
   <ion-row>
-    <ion-col col-6 offset-sm-3 *ngFor = "let list of listRef | async">
-      <ion-card>
-        <img *ngIf="list.color=='#f55f7c'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKjSURBVGhD7ZnLbtNAFIYjbgt23FbAYxTBipcggrbKOAgpr9CQmcq7whoqcXuECqSKy3tAywNQYEMLKm1sUTbm/PFhE51J7Xg8nkr+pF+KFM85fyZjz5njTktLS3Wybvd0Eo1ujpUekV4nynxOIvNrrMxfCJ+TSG/jO1yDa7M4PsXDmyPt6+tk7DGZ+k4mszIaR+YbxibL8TUO54+DxfgyzfLLcaSPJHNlhBg0Ac8Qk8PXy2HfLCVK/5TMVJPeRWxO456sG5+jJK/k5O5ES+t5Nhic5bRuyAbxeQr+YTpZbVL6PXJy+mrkM+/RPIvujU0n/4SPZWMTlhPbmI/DSC9LgX0q7em7bKccB/cfXqEAe9MB/Uvv/u4NL7Gt4uDvkwP6F+3m62yrGNhhXWxSrjTxokZX2d7xTLZ4IVCjUuYR25sNiqy8ThGCNChaRjuFCsC0t3pLChCE1OgG27STl7vC4ABE98KQbdqh5fNGGhyC6AdssE07dANvS4MD0RbbtEMX0elJHByC9timnZCe/9OCN7Zp58T/ALrwZC8humhralA4UvoT27SD1oc4OAAVeowGvZEps8I27aDpJA0OQv3VBbZpJy/m9FcxQIMqXMwBlK5SkGal19je8aDdF9J+QLP/p9SBBqDdJwVrQjSZT9lWcXCQpsHNH+qV+bH/IL7ItsqRKr0oBvUoOp932c580FJ6IQX2IVr7T9jG/KC1SGtwU0pQp5ATL07YRjUmzV1l3kmJ6pF+66y5+x80Wn00u/DEyW7HZzite9LI3EO7T0peTRRTmTucpl7wiKUbbN3FZodNCrO+vzS8wOH9gR0bZQcZ+CKZm6V8jF4rvcPWAYosNJ3I1JC0gYMH3qPR5yOI36l9xHc04yuoKgsXZi0tLTPodP4BdTpC7ws4MCAAAAAASUVORK5CYII=">
-        <img *ngIf="list.color=='#ffcb53'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKpSURBVGhD7ZnNThRBFIUnIC7cobhSHwMCK17ARKa7JwrseQWNG3bAGklQeAMIJsSfrTsj3R0Th/EBUNgwMGtlUeW51ZeNuTV0T/+Vpr/kJGRm6t5zq6qrqotWQ0NDfvReZ1zF7VkV+i9V5B1A31XoDaAr1gCf9cx39Bv8VuvVMW5eHyp88kiH3gZMnenI11mEYk5N2y/thxyuOnS8OAUDO+jZ35K5LKIY0DbF5PDlAuNL0KVkJo9QRJ9ic5ri0b3ObSTZlZIXKeR4reOVCU5bDDp+fAe981FKWIbwTH2gnJw+H6bnKzR/LRX5h4WMRBXTxiaaTmxjNNRRsCwFrlIo4inbyYb6GtzHMF5IQasUCuiro4V7bCs9ZjUQAtYhPINbbCsdtMOigNybVFEiL+pz8IDt3Qxt8VKgOoWldZ3tDYcOWRiyUylIncLz+CPVARArz5wUwAWpKJhhm3bouCs1dkKx94Jt2sFQvRUbOyB07j7btIP535MauyB07jHbtIMlayA1dkG0sbJNOy6t/3+LvLFNO/9DAf/4FMKDIjV2QejcLtu0g1XoQGrsgtItow5vZJgdz9mmHXPpJDR2QSpsT7NNO8lhzv8pBahT8JTuMEfQ0VUKUqdQwBrbuxm67nNpP0CH/sr0QkOggG0pWB1CAa/YVnroRRrD5sJL/Tl6/y7bygYKWJSCVqo46LCd0UARb8TAFQhTZ5NtjE5ytegfSgnKlMm51xlnG/kwl7uh/15KVIYw798Vdrl7DV20InDpl1204uhP87c4bfGoMHiGQvpS8jyimCpqB5ymXJIl1ttC0gL+xYRNinq9uzTJ4asj2bH9dRRyIpkbJmqDB3Ut8w5bBskBMJihexsUtA9zXYzQJY2QUfL3N/MdjsR0qkx9MGtoaBhCq/UHXEnSdXByWAIAAAAASUVORK5CYII=">
-        <img *ngIf="list.color=='#85dec8'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKsSURBVGhD7ZnLbtNAFIYjbgt23FbAY1DBe4C4PUhRN17EdrumlaDwBq1AQly2lUDyOFU2tEFCpeOoId0QypqwCf9xTjdwJrVjezyV/Em/FCmec/6ZjH3GJ62GhobibEw2zvr9+Hag4yU/iV/5Wn3xdfzLT9SfVPgcJKpH36XX4FpvMjnDw+uj/W37JgytwOBhkMSTXNLxkMau7MU3OJw9vK/dqzD9Aqs6Fs3lEmJo9YxicvhqCfY7j7ByR7KZIlIjis1pysfr9S4g0cv/E5cr3D/P17vd85y2HLzD7kWs+gcpYRXCzf6ecnL6YqQrb9H8sXCPvSnll0CwyreNSbSd2MZ8tHX0WApsU+1E3Wc7+Qj2Pl7DCvyUgtqVGoXDzhW2lR36+eSA9oVqvsa2spFW2FKKVFlSY38QXWd7J0MlXg5Un/BoXWZ7s6FDFiYwlILUKzXIdAAM+507coD65etogW2aweovSYOdkFZP2KYZXPRaHOyA8DTaZJtmsNd60mAXhAnssk0z07cnOUDdosLKNs249fz/V2rMNs2c+gmc+i1EN4o02BHtsE0zaetDHly7sj1GHS5kmMAi2zSTNqiEwS4o1Nu32KYZOjBhpt+lAPUq42GOoKOrHKROqZDtnQy1+1yqB1jQ37leaAhq90nB6pFaZVvZoRdpF17qsfo/vEF0mW3lo70fP5SC2pSfdO6xnfnAVlqXAtsQjjVP2cb8UGuR2nxSgipFOemPE7ZRjLS5m6h3UqIqhDr0trTm7jHUaLXT7FKr3tbWOU5bPkFfPUCSkZy8iBBTx3c5TbWkj9hErSFp4WJHRYpWffng0yUObw+q2HTswGQOJHOzNB2jwtwVtgrSA6COFqhvA2ObMLiD7XA0/YUgfMZEP9N30CKdKjMfzBoaGmbQav0F5+MbRUoyE2cAAAAASUVORK5CYII=">
-        <p id="listName">{{list?.name}}</p>
-        <!-- <p id="listColor">{{list?.color}}</p> -->
-      </ion-card>
-    </ion-col>                  
-    <button id="add-bttn" ion-button [navPush]="goNew"><ion-icon name="add"></ion-icon></button>
-  </ion-row>      
-  </ion-grid>
+    <ion-col col-6 *ngFor="let list of listRef | async">
+      <ion-card class="card">
+      <ion-item-sliding no-lines id="sliding">
+        <button ion-item id="item" (click)="itemTapped($event, list)"> 
+            <img *ngIf="list.color=='#f55f7c'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKjSURBVGhD7ZnLbtNAFIYjbgt23FbAYxTBipcggrbKOAgpr9CQmcq7whoqcXuECqSKy3tAywNQYEMLKm1sUTbm/PFhE51J7Xg8nkr+pF+KFM85fyZjz5njTktLS3Wybvd0Eo1ujpUekV4nynxOIvNrrMxfCJ+TSG/jO1yDa7M4PsXDmyPt6+tk7DGZ+k4mszIaR+YbxibL8TUO54+DxfgyzfLLcaSPJHNlhBg0Ac8Qk8PXy2HfLCVK/5TMVJPeRWxO456sG5+jJK/k5O5ES+t5Nhic5bRuyAbxeQr+YTpZbVL6PXJy+mrkM+/RPIvujU0n/4SPZWMTlhPbmI/DSC9LgX0q7em7bKccB/cfXqEAe9MB/Uvv/u4NL7Gt4uDvkwP6F+3m62yrGNhhXWxSrjTxokZX2d7xTLZ4IVCjUuYR25sNiqy8ThGCNChaRjuFCsC0t3pLChCE1OgG27STl7vC4ABE98KQbdqh5fNGGhyC6AdssE07dANvS4MD0RbbtEMX0elJHByC9timnZCe/9OCN7Zp58T/ALrwZC8humhralA4UvoT27SD1oc4OAAVeowGvZEps8I27aDpJA0OQv3VBbZpJy/m9FcxQIMqXMwBlK5SkGal19je8aDdF9J+QLP/p9SBBqDdJwVrQjSZT9lWcXCQpsHNH+qV+bH/IL7ItsqRKr0oBvUoOp932c580FJ6IQX2IVr7T9jG/KC1SGtwU0pQp5ATL07YRjUmzV1l3kmJ6pF+66y5+x80Wn00u/DEyW7HZzite9LI3EO7T0peTRRTmTucpl7wiKUbbN3FZodNCrO+vzS8wOH9gR0bZQcZ+CKZm6V8jF4rvcPWAYosNJ3I1JC0gYMH3qPR5yOI36l9xHc04yuoKgsXZi0tLTPodP4BdTpC7ws4MCAAAAAASUVORK5CYII=">
+            <img *ngIf="list.color=='#ffcb53'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKpSURBVGhD7ZnNThRBFIUnIC7cobhSHwMCK17ARKa7JwrseQWNG3bAGklQeAMIJsSfrTsj3R0Th/EBUNgwMGtlUeW51ZeNuTV0T/+Vpr/kJGRm6t5zq6qrqotWQ0NDfvReZ1zF7VkV+i9V5B1A31XoDaAr1gCf9cx39Bv8VuvVMW5eHyp88kiH3gZMnenI11mEYk5N2y/thxyuOnS8OAUDO+jZ35K5LKIY0DbF5PDlAuNL0KVkJo9QRJ9ic5ri0b3ObSTZlZIXKeR4reOVCU5bDDp+fAe981FKWIbwTH2gnJw+H6bnKzR/LRX5h4WMRBXTxiaaTmxjNNRRsCwFrlIo4inbyYb6GtzHMF5IQasUCuiro4V7bCs9ZjUQAtYhPINbbCsdtMOigNybVFEiL+pz8IDt3Qxt8VKgOoWldZ3tDYcOWRiyUylIncLz+CPVARArz5wUwAWpKJhhm3bouCs1dkKx94Jt2sFQvRUbOyB07j7btIP535MauyB07jHbtIMlayA1dkG0sbJNOy6t/3+LvLFNO/9DAf/4FMKDIjV2QejcLtu0g1XoQGrsgtItow5vZJgdz9mmHXPpJDR2QSpsT7NNO8lhzv8pBahT8JTuMEfQ0VUKUqdQwBrbuxm67nNpP0CH/sr0QkOggG0pWB1CAa/YVnroRRrD5sJL/Tl6/y7bygYKWJSCVqo46LCd0UARb8TAFQhTZ5NtjE5ytegfSgnKlMm51xlnG/kwl7uh/15KVIYw798Vdrl7DV20InDpl1204uhP87c4bfGoMHiGQvpS8jyimCpqB5ymXJIl1ttC0gL+xYRNinq9uzTJ4asj2bH9dRRyIpkbJmqDB3Ut8w5bBskBMJihexsUtA9zXYzQJY2QUfL3N/MdjsR0qkx9MGtoaBhCq/UHXEnSdXByWAIAAAAASUVORK5CYII=">
+            <img *ngIf="list.color=='#85dec8'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKsSURBVGhD7ZnLbtNAFIYjbgt23FbAY1DBe4C4PUhRN17EdrumlaDwBq1AQly2lUDyOFU2tEFCpeOoId0QypqwCf9xTjdwJrVjezyV/Em/FCmec/6ZjH3GJ62GhobibEw2zvr9+Hag4yU/iV/5Wn3xdfzLT9SfVPgcJKpH36XX4FpvMjnDw+uj/W37JgytwOBhkMSTXNLxkMau7MU3OJw9vK/dqzD9Aqs6Fs3lEmJo9YxicvhqCfY7j7ByR7KZIlIjis1pysfr9S4g0cv/E5cr3D/P17vd85y2HLzD7kWs+gcpYRXCzf6ecnL6YqQrb9H8sXCPvSnll0CwyreNSbSd2MZ8tHX0WApsU+1E3Wc7+Qj2Pl7DCvyUgtqVGoXDzhW2lR36+eSA9oVqvsa2spFW2FKKVFlSY38QXWd7J0MlXg5Un/BoXWZ7s6FDFiYwlILUKzXIdAAM+507coD65etogW2aweovSYOdkFZP2KYZXPRaHOyA8DTaZJtmsNd60mAXhAnssk0z07cnOUDdosLKNs249fz/V2rMNs2c+gmc+i1EN4o02BHtsE0zaetDHly7sj1GHS5kmMAi2zSTNqiEwS4o1Nu32KYZOjBhpt+lAPUq42GOoKOrHKROqZDtnQy1+1yqB1jQ37leaAhq90nB6pFaZVvZoRdpF17qsfo/vEF0mW3lo70fP5SC2pSfdO6xnfnAVlqXAtsQjjVP2cb8UGuR2nxSgipFOemPE7ZRjLS5m6h3UqIqhDr0trTm7jHUaLXT7FKr3tbWOU5bPkFfPUCSkZy8iBBTx3c5TbWkj9hErSFp4WJHRYpWffng0yUObw+q2HTswGQOJHOzNB2jwtwVtgrSA6COFqhvA2ObMLiD7XA0/YUgfMZEP9N30CKdKjMfzBoaGmbQav0F5+MbRUoyE2cAAAAASUVORK5CYII=">
+            <p id="listName">{{list?.name}}</p>
+        </button>
   
-  <!-- <div class="add-bttn">
-    <ion-fab bottom center>
-      <button ion-fab [navPush]="goNew"><ion-icon name="add"></ion-icon></button>
-    </ion-fab>
-  </div> -->
+        <ion-item-options side="right">
+          <button ion-button (click)="deleteList(list)"><ion-icon name="trash"></ion-icon>Delete</button>
+        </ion-item-options>
+      </ion-item-sliding>
+      </ion-card>
+
+    </ion-col>  
+
+    <ion-col col-6>
+      <ion-card class="bttn">
+      <button id="add-bttn" ion-button [navPush]="goNew"><ion-icon name="add"></ion-icon></button>                    
+        </ion-card>
+    </ion-col>
+    </ion-row>
+  </ion-grid>  
+  </ion-list>
+
 </ion-content>

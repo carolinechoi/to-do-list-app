@@ -1,7 +1,7 @@
 //Default imports
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, NavParams } from 'ionic-angular';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,6 +22,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { AddBulletPage } from '../pages/add-bullet/add-bullet';
 import { AddListPage } from '../pages/add-list/add-list';
 import { PopoverPage } from '../pages/popover/popover';
+import { ClickedListPage } from '../pages/clicked-list/clicked-list';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PopoverPage } from '../pages/popover/popover';
     SignupPage,
     AddBulletPage,
     AddListPage,
-    PopoverPage
+    PopoverPage,
+    ClickedListPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { PopoverPage } from '../pages/popover/popover';
     SignupPage,
     AddBulletPage,
     AddListPage,
-    PopoverPage
+    PopoverPage,
+    ClickedListPage
   ],
   providers: [
     StatusBar,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, PopoverController } from 'ionic-angular';
+import { NavController, PopoverController, ActionSheetController } from 'ionic-angular';
 import { AddListPage } from '../add-list/add-list';
 
 //Firebase imports
@@ -9,13 +9,15 @@ import { AngularFireAuth } from 'angularfire2/auth';
 //Observable
 import { Observable } from 'rxjs';
 import { list } from '../../models/list.interface';
-import { PopoverPage } from '../popover/popover';
+import { ClickedListPage } from '../clicked-list/clicked-list';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
+  selectedItem: any;
+
   goNew = AddListPage;
 
   list = {} as list;
@@ -27,10 +29,10 @@ export class HomePage {
     public popoverCtrl: PopoverController) {
   }
 
-  presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverPage);
-    popover.present({
-      ev: myEvent
+  itemTapped(event, list) {
+    // That's right, we're pushing to ourselves!
+    this.navCtrl.push(ClickedListPage, {
+      list: list
     });
   }
 
