@@ -1,76 +1,82 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:bold');
 @import url('https://fonts.googleapis.com/css?family=Josefin Sans:regular');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
+@import url('https://fonts.googleapis.com/css?family=Poppins:bold,semi-bold,thin,regular');
 
 // Colors
 $primary: #3c4857;
+// $primary: whitesmoke;
 $primary: black;
 $pink: #FED5C8;
 $grey: #5a6169;
-$light-grey: #f3f3f3;
 $pg-bckgrnd: #343453;
+$pg-bckgrnd: whitesmoke;
 
 //fonts
 $font: 'Open Sans', bold;
+$font: 'Poppins';
 
 //card style
-$border-radius: 17px;
-$card-height: 155px;
+$border-radius: 7px;
+$card-height: 130px;
+$card-color: black;
 
 page-home {
     .master {
         background-color: $pg-bckgrnd;
     }
     .navbar {
-        margin-top: 0px;
+        margin-top: 30px;
+        background-color: $pg-bckgrnd;
         #title {
-            margin-left: 9px;
+            margin-left: 22px;
             font-family: $font;
             font-size: 25px;
-            color: whitesmoke;
+            color: $primary;
             font-weight: bold;
+            letter-spacing: 1px;
         }
         #sub {
-            margin-left: 10px;
+            margin-left: 24px;
             font-family: $font;
             font-size: 15px;
-            color: whitesmoke;
+            color: $primary;
             margin-top: -20px;
+            letter-spacing: 1 px;
         }
         #search {
-            margin-top: -5px;
+            margin-top: 0px;
+            padding-right: 27px;
         }
         #search {
             background-color: $pg-bckgrnd;
-            color: whitesmoke;
-            font-size: 15px;
+            color: $primary;
+            font-size: 14px;
             float: right;
-            margin-left: -13px;
-            margin-right: -10px;
         }
         #menu {
             float: right;
             background-color: $pg-bckgrnd;
-            color: whitesmoke;
+            color: $primary;
             font-size: 15px;
-            padding-left: -10px;
         }
     }
     ion-grid {
-        margin-top: 13%;
-        background-color: $pg-bckgrnd;
-        #item {
+        #blueitem, #yellowitem, #pinkitem, #item {
             height: $card-height;
-            background-color: whitesmoke;
-            // border-top: solid #f5f2f2e5 ;
-            // border-top-width: 1px;
-            // border-bottom: solid #dfe1e7da;
-            // border-bottom-width: 1px;
         }
-        .card {
+        #pinkitem {
+            background-color: #fc7080;
+        }
+        #yellowitem {
+            background-color: #ffce4e;
+        }
+        #blueitem {
+            background-color: #69e9bf;
+        }
+            .yellowcard, .bluecard, .pinkcard, .card {
             border-radius: $border-radius;
-            background-color: $pg-bckgrnd;
-            // box-shadow: 2px 7px 50px $light-grey;
+            box-shadow: 1px 2px 10px $light-grey;
 
             img {
                 width: 10%;
@@ -87,11 +93,11 @@ page-home {
             #listName{
                 margin-top: 70px;
                 font-style: bold;
-                color: $pg-bckgrnd;
+                color: whitesmoke;
+                font-weight: medium;
             }
         }
         .bttn {
-            // box-shadow: 1px 2px 10px $light-grey;
             height: $card-height;
             border-radius: $border-radius;
             background-color: $pg-bckgrnd;

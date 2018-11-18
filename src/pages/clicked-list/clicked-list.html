@@ -1,26 +1,19 @@
 <ion-header>
-
-  <ion-navbar class="nav" *ngIf="selectedItem.color=='#f55f7c'">
-    <style *ngIf="selectedItem.color=='#f55f7c'">
-      .nav {
-        background-color: #f55f7c;
-      }
-    </style>
-    <ion-title>{{selectedItem.name}}</ion-title>
-  </ion-navbar>
-
-  <ion-navbar *ngIf="selectedItem.color!=='#f55f7c'">
-    <ion-title>{{selectedItem.color}}</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-title [ngClass]="{'bar': selectedColor=='#ffce4e', 'barA': selectedColor=='#f55f7c', 'barB':selectedColor=='#85dec8'}">{{selectedItem.name}}</ion-title>
+    </ion-navbar>     
 </ion-header>
 
 
-<ion-content padding>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.name}}</b>
-    Here is some more data: 
-    {{selectedItem.color}}
-  </div>
-  <img *ngIf="selectedItem.color=='#f55f7c'" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKjSURBVGhD7ZnLbtNAFIYjbgt23FbAYxTBipcggrbKOAgpr9CQmcq7whoqcXuECqSKy3tAywNQYEMLKm1sUTbm/PFhE51J7Xg8nkr+pF+KFM85fyZjz5njTktLS3Wybvd0Eo1ujpUekV4nynxOIvNrrMxfCJ+TSG/jO1yDa7M4PsXDmyPt6+tk7DGZ+k4mszIaR+YbxibL8TUO54+DxfgyzfLLcaSPJHNlhBg0Ac8Qk8PXy2HfLCVK/5TMVJPeRWxO456sG5+jJK/k5O5ES+t5Nhic5bRuyAbxeQr+YTpZbVL6PXJy+mrkM+/RPIvujU0n/4SPZWMTlhPbmI/DSC9LgX0q7em7bKccB/cfXqEAe9MB/Uvv/u4NL7Gt4uDvkwP6F+3m62yrGNhhXWxSrjTxokZX2d7xTLZ4IVCjUuYR25sNiqy8ThGCNChaRjuFCsC0t3pLChCE1OgG27STl7vC4ABE98KQbdqh5fNGGhyC6AdssE07dANvS4MD0RbbtEMX0elJHByC9timnZCe/9OCN7Zp58T/ALrwZC8humhralA4UvoT27SD1oc4OAAVeowGvZEps8I27aDpJA0OQv3VBbZpJy/m9FcxQIMqXMwBlK5SkGal19je8aDdF9J+QLP/p9SBBqDdJwVrQjSZT9lWcXCQpsHNH+qV+bH/IL7ItsqRKr0oBvUoOp932c580FJ6IQX2IVr7T9jG/KC1SGtwU0pQp5ATL07YRjUmzV1l3kmJ6pF+66y5+x80Wn00u/DEyW7HZzite9LI3EO7T0peTRRTmTucpl7wiKUbbN3FZodNCrO+vzS8wOH9gR0bZQcZ+CKZm6V8jF4rvcPWAYosNJ3I1JC0gYMH3qPR5yOI36l9xHc04yuoKgsXZi0tLTPodP4BdTpC7ws4MCAAAAAASUVORK5CYII=">
+<ion-content class="master" padding>
+  <ion-list no-lines>
+      <ion-item class="ite" *ngFor="let bullet of bulletRef | async">
+          <ion-label text-wrap>{{bullet.description}}</ion-label>
+          <ion-checkbox [(ngModel)]="bullet.checked" (ionChange)="updateCucumber(bullet)"></ion-checkbox>
+      </ion-item>
+  </ion-list>
+
+  <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="itemTapped($event, selectedItem)"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 </ion-content>

@@ -23,6 +23,7 @@ export class AddListPage implements OnInit{
 
   list = {} as list;
   newListRef$: AngularFireList<list>;
+  listId: any;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
@@ -34,6 +35,7 @@ export class AddListPage implements OnInit{
     //method .take() does not work on authState, also unnecessary 
     this.afAuth.authState.subscribe(auth => {
       this.newListRef$ = this.db.list(auth.uid+'/lists');
+      console.log(this.newListRef$);
     });
   }
 
@@ -45,8 +47,8 @@ export class AddListPage implements OnInit{
       this.newListRef$.push({
         name: this.list.name,
         color: this.list.color
-      });
+      })
       this.navCtrl.push(HomePage);
-    }
+  }
   
 }

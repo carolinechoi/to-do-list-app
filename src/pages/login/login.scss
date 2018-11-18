@@ -1,64 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:bold');
+@import url('https://fonts.googleapis.com/css?family=Josefin Sans:regular');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
+@import url('https://fonts.googleapis.com/css?family=Poppins:bold,semi-bold,thin,regular');
 
 // Colors
-$primary: #000;
+$primary: #3c4857;
+// $primary: whitesmoke;
+$primary: black;
 $pink: #FED5C8;
-$light-grey: #3c4857;
+$grey: #5a6169;
+$pg-bckgrnd: #343453;
+$pg-bckgrnd: whitesmoke;
+
+//fonts
+$font: 'Open Sans', bold;
+$font: 'Poppins';
 
 page-login {
-    #close {
-        background-color: white;
-        color: $primary;
-        font-size: 25px;
-        float: left;
-    }
-    img {
-        display: table;
-        margin: 0 auto;
-    }
-    .title {
-        text-align: center;
-        font-family: 'Open Sans';
-        font-weight: bold;
-        font-size: 30px;
-        letter-spacing: 1px;
-    }
-    .button {
-        display: table;
-        margin: 0 auto;
-        border-radius: 4px;
-        button {
-            font-family: 'Open Sans';
-            width: 300px;
-            letter-spacing: 2px;
-            height: 47px;
-            display: block;
+    #master{
+        background-color: $pg-bckgrnd;}
+        #close {
+            background-color: $pg-bckgrnd;
+            color: $primary;
+            float: left;
+            position: absolute;
+            font-size: 25px;
+            top: 0px;
+            left: 3px;
         }
-    }
-    .list {
-        padding-top: 20px;
-        ion-item {
-            padding-top: 15px;
-            ion-label {
-                padding-top: 5px;
-            }
-        }
-    }
-    #other {
-        font-family: 'Open Sans';
-        font-size: 12px;
-        text-align: center;
-        color: $primary;
-    }
-    //For iPhoneSE + smaller
-    @media screen and (max-width: 640px) {
-        img {
-            width: 60px;
-            margin-bottom: 10px;
+        .title {
+            text-align: left;
+            font-family: $font;
+            font-weight: bold;
+            font-size: 25px;
+            letter-spacing: 1px;
+            background-color: $pg-bckgrnd;
+            color: black;
         }
         .button {
-            margin-top: 46px;
+            display: table;
+            margin: 0 auto;
+            border-radius: 4px;
+            margin-top: 40px;
+            button {
+                font-family: 'Open Sans';
+                letter-spacing: 2px;
+                width: 280px;
+                height: 50px;
+                display: block;
+            }
         }
-    }
+        .list {
+            background-color: $pg-bckgrnd;
+            padding-top: 70px;
+            margin-left: -10px;
+            ion-item {
+                padding-top: 40px;
+                background-color: $pg-bckgrnd;
+            }
+        }
+        .radio-label{
+            text-align: left;
+            margin-left: 25px;
+            font-family: $font;
+            font-weight: bold;
+            font-size: 30px;
+            letter-spacing: 1px;
+            background-color: $pg-bckgrnd;
+            color: $dark;
+            margin-top: 100px;
+            margin-bottom: 20px;
+        }
 }

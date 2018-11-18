@@ -1,58 +1,91 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:bold');
+@import url('https://fonts.googleapis.com/css?family=Josefin Sans:regular');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
+@import url('https://fonts.googleapis.com/css?family=Poppins:bold,semi-bold,thin,regular');
 
 // Colors
-$primary: #000;
+$primary: #3c4857;
+// $primary: whitesmoke;
+$primary: black;
 $pink: #FED5C8;
-$light-grey: #3c4857;
+$grey: #5a6169;
+$dark: #323942;
+$pg-bckgrnd: #343453;
+$pg-bckgrnd: whitesmoke;
+
+//fonts
+$font: 'Open Sans', bold;
+$font: 'Poppins';
 
 page-add-list {
+    #master{
+    background-color: $pg-bckgrnd;}
     #close {
-        background-color: white;
+        background-color: $pg-bckgrnd;
         color: $primary;
-        font-size: 25px;
         float: left;
-    }
-    img {
-        display: table;
-        margin: 0 auto;
+        position: absolute;
+        font-size: 25px;
+        top: 0px;
+        left: 3px;
     }
     .title {
-        text-align: center;
-        font-family: 'Open Sans';
+        text-align: left;
+        font-family: $font;
         font-weight: bold;
         font-size: 30px;
         letter-spacing: 1px;
+        background-color: $pg-bckgrnd;
+        color: black;
     }
     .button {
         display: table;
         margin: 0 auto;
         border-radius: 4px;
+        margin-top: 27px;
         button {
             font-family: 'Open Sans';
             letter-spacing: 2px;
-            width: 300px;
-            height: 47px;
+            width: 280px;
+            height: 50px;
             display: block;
         }
     }
     .list {
-        padding-top: 20px;
+        background-color: $pg-bckgrnd;
+        padding-top: 70px;
+        margin-left: -10px;
         ion-item {
-            padding-top: 15px;
-            ion-label {
-                padding-top: 5px;
+            padding-top: 10px;
+            background-color: $pg-bckgrnd;
+            .labelC, .labelY, .labelB {
+                margin-left: 20px;
+                font-family: $font;
+                font-weight: bold;
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+            .labelC{
+                color: #f55f7c;
+            }
+            .labelY{
+                color: #ffcb53;
+            }
+            .labelB{
+                color: #85dec8;
             }
         }
-    }
-    //For iPhoneSE + smaller
-    @media screen and (max-width: 640px) {
-        img {
-            width: 60px;
-            margin-bottom: 10px;
-        }
-        .button {
-            margin-top: 47px;
+        .radio-label{
+            text-align: left;
+            margin-left: 35px;
+            font-family: $font;
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 1px;
+            background-color: $pg-bckgrnd;
+            color: $dark;
+            margin-top: -25px;
+            margin-bottom: 20px;
         }
     }
 }

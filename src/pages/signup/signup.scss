@@ -19,7 +19,7 @@ page-signup {
     }
     .title {
         text-align: center;
-        font-family: 'Open Sans';
+        font-family: 'Poppins';
         font-weight: bold;
         font-size: 30px;
         letter-spacing: 1px;
@@ -28,6 +28,7 @@ page-signup {
         display: table;
         margin: 0 auto;
         border-radius: 4px;
+        margin-top: -20px;
         button {
             font-family: 'Open Sans';
             width: 300px;
@@ -58,7 +59,7 @@ page-signup {
             margin-bottom: 10px;
         }
         .button {
-            margin-top: 46px;
+            margin-top: 40px;
         }
     }
 }

@@ -1,3 +1,45 @@
-page-clicked-list {
+@import url('https://fonts.googleapis.com/css?family=Poppins:bold');
+@import url('https://fonts.googleapis.com/css?family=Josefin Sans:regular');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:bold,semi-bold,thin,regular');
 
+// Colors
+$primary: #3c4857;
+$primary: rgb(223, 223, 223);
+$pink: #FED5C8;
+$grey: #5a6169;
+$light-grey: #f3f3f3;
+$pg-bckgrnd: whitesmoke;
+
+//fonts
+$font: 'Open Sans', bold;
+$fontSmall: 'Poppins';
+
+page-clicked-list {
+    .master{
+        background-color: $pg-bckgrnd;}
+    ion-title{
+        color: whitesmoke;
+        font-family: $fontSmall;
+        font-size: 13px;
+    }
+    .ite{
+        background-color: rgb(253, 253, 253);
+        margin-top: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        // box-shadow: -2px -2px $primary, 2px -2px $primary, 2px 2px $primary;
+        box-shadow: 6px 7px 20px 1px $primary;
+        border-radius: 3px;
+        font-family: $fontSmall;
+        font-size: 15px;
+    }
+    .bar .toolbar-title{
+        color: #ffce4e !important;
+      }
+      .barA .toolbar-title{
+        color: #f55f7c !important;
+      }
+      .barB .toolbar-title{
+        color: #85dec8 !important;
+      }
 }
